@@ -73,7 +73,7 @@
 //main
 int main(){
 	//presentation
-	printf("Prog2 > Be sure to run Prog1 before running this one.\n\n");
+	printf("Prog2 > Be sure to run Prog1 (./run1) before running this one.\n\n");
 
 
 
@@ -81,7 +81,7 @@ int main(){
 
 
 	//get shm segment id
-	printf("Prog2 > Please give the SHM segment id of Prog1 :\n");
+	printf("Prog2 > Please give the SHM segment id of Prog1 : ");
 	int id;
 	int temp = scanf(" %i", &id);
 
@@ -102,14 +102,14 @@ int main(){
 
 	//main loop
 	while(stand){
-		printf("Prog2 > Main-Loop : Please enter 'h' to get some help.\n");
-		printf("You > \n");
+		printf("\n\n\n\nProg2 > Main-Loop : Please enter 'h' to get some help.\n");
+		printf("You > ");
 		temp = scanf(" %c", &c);
 		switch(c){
 
 			//help menu
 			case 'h':
-				printf("Prog2 > Here is some help on available commands in this main loop.\n");
+				printf("\nProg2 > Here is some help on available commands in this main loop.\n");
 				printf("Prog2 >  - 'h' : Shows this help section.\n");
 				printf("Prog2 >  - 'q' : Quit Prog1.\n");
 				printf("Prog2 >  - 'r' : Read content of SHM segment.\n");
@@ -123,7 +123,7 @@ int main(){
 
 			//read
 			case 'r':
-				printf("Prog2 > Reading data from SHM segment...");
+				printf("Prog2 > Reading data from SHM segment...\n");
 
 				data = shm_read(s2);
 
@@ -135,7 +135,7 @@ int main(){
 
 			//write
 			case 'w':
-				printf("Prog2 > Enter a text to write inside shm (length limit : %i) : \n", SEGMENT_LENGTH);
+				printf("Prog2 > Enter a text to write inside shm (length limit : %i) : ", SEGMENT_LENGTH);
 
 				data = malloc(SEGMENT_LENGTH);
 				if(data == NULL){

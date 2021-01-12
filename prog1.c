@@ -73,7 +73,7 @@
 //main
 int main(){
 	//presentation
-	printf("Prog1 > This is a basic example of file reading/writing using \"shm.c/.h\".\n\n");
+	printf("Prog1 > This is a basic example of SHM manipulation using \"shm.c/.h\".\n\n");
 
 
 
@@ -87,7 +87,7 @@ int main(){
 
 	//shm segment created
 	printf("Prog1 > SHM segment created with id [%i].\n", (int)s1->id);
-	printf("Prog1 > You can now run Prog2 on another terminal.\n");
+	printf("Prog1 > You can now run Prog2 (./run2) on another terminal.\n");
 
 
 
@@ -100,14 +100,14 @@ int main(){
 
 	//main loop
 	while(stand){
-		printf("Prog1 > Main-Loop : Please enter 'h' to get some help.\n");
-		printf("You > \n");
+		printf("\n\n\n\nProg1 > Main-Loop : Please enter 'h' to get some help.\n");
+		printf("You > ");
 		temp = scanf(" %c", &c);
 		switch(c){
 
 			//help menu
 			case 'h':
-				printf("Prog1 > Here is some help on available commands in this main loop.\n");
+				printf("\nProg1 > Here is some help on available commands in this main loop.\n");
 				printf("Prog1 >  - 'h' : Shows this help section.\n");
 				printf("Prog1 >  - 'q' : Quit Prog1.\n");
 				printf("Prog1 >  - 'r' : Read content of SHM segment.\n");
@@ -121,7 +121,7 @@ int main(){
 
 			//read
 			case 'r':
-				printf("Prog1 > Reading data from SHM segment...");
+				printf("Prog1 > Reading data from SHM segment...\n");
 
 				data = shm_read(s1);
 
@@ -133,7 +133,7 @@ int main(){
 
 			//write
 			case 'w':
-				printf("Prog1 > Enter a text to write inside shm (length limit : %i) : \n", SEGMENT_LENGTH);
+				printf("Prog1 > Enter a text to write inside shm (length limit : %i) : ", SEGMENT_LENGTH);
 
 				data = malloc(SEGMENT_LENGTH);
 				if(data == NULL){

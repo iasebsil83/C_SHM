@@ -50,7 +50,7 @@
      - shm_read()
      - shm_write()
 
-    11/01/2021 > [0.1.0] :
+    12/01/2021 > [0.1.0] :
     - Created shm.c/.h.
     - Added the demonstration programs.
 
@@ -177,7 +177,6 @@ void shm_close(shm* shared){
 
 	//free structure (and not the shm segment)
 	shmdt(shared->data);
-	free(shared->data);
 	free(shared);
 }
 
