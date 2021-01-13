@@ -3,7 +3,7 @@ on linux a little bit easier than sys/shm.h does.
 
 Demonstration programs are made in prog1.c & prog2.c (please launch Prog1 first).
 
-More informations about this library are available in shm.h.
+More information about this library are available in shm.c.
 
 
 
