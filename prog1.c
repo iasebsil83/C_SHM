@@ -110,7 +110,7 @@ int main(){
 				printf("Prog1 >  - 'h' : Shows this help section.\n");
 				printf("Prog1 >  - 'q' : Quit Prog1.\n");
 				printf("Prog1 >  - 'r' : Read content of SHM segment.\n");
-				printf("Prog1 >  - 'w' : Write on SHM segment.\n\n");
+				printf("Prog1 >  - 'w' : Write in SHM segment.\n\n");
 			break;
 
 			//quit
