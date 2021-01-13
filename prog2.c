@@ -86,8 +86,7 @@ int main(){
 	int temp = scanf(" %i", &id);
 
 	//open SHM segment
-	#define SEGMENT_LENGTH 50
-	shm* s2 = shm_open(id, SEGMENT_LENGTH);
+	shm* s2 = shm_open(id, 50);
 
 	//shm segment opened
 	printf("Prog1 > SHM segment opened.\n");
@@ -128,16 +127,16 @@ int main(){
 				data = shm_read(s2);
 
 				printf("Prog2 > SHM segment contains data : \"");
-				for(int i=0; i < SEGMENT_LENGTH; i++)
+				for(int i=0; i < s2->length; i++)
 					printf("%c", data[i]);
 				printf("\".\n\n");
 			break;
 
 			//write
 			case 'w':
-				printf("Prog2 > Enter a text to write inside shm (length limit : %i) : ", SEGMENT_LENGTH);
+				printf("Prog2 > Enter a text to write inside shm (length limit : %u) : ", s2->length);
 
-				data = malloc(SEGMENT_LENGTH);
+				data = malloc(s2->length);
 				if(data == NULL){
 					printf("FATAL ERROR > prog2.c : main() : Computer refuses to give more memory.\n");
 					exit(EXIT_FAILURE);
