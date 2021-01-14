@@ -34,7 +34,7 @@
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SHM [0.1.0] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SHM [0.1.1] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                  SHM by I.A.
 
         SHM is just an utility program that allows you to manipulate
@@ -53,6 +53,9 @@
     12/01/2021 > [0.1.0] :
     - Created shm.c/.h.
     - Added the demonstration programs.
+
+    14/01/2021 > [0.1.1] :
+    - Fixed a little thing in shm_write/read().
 
     BUGS : .
     NOTES : .
@@ -185,7 +188,7 @@ void shm_close(shm* shared){
 //read - write
 char* shm_read(shm* shared){ //returned data is NOT a copy but the SHM segment itself
 	if(shared == NULL){
-		printf("RUNTIME ERROR > shm.c : shm_start() : SHM instance is NULL.\n");
+		printf("RUNTIME ERROR > shm.c : shm_read() : SHM instance is NULL.\n");
 		return NULL;
 	}
 
@@ -196,11 +199,11 @@ void shm_write(shm* shared, char* data){ // data will not be free after use
                                          //WARNING ! data MUST HAVE length >= shared->length ('\0' IS NOT DETERMINATIVE)
 	//error cases
 	if(shared == NULL){
-		printf("RUNTIME ERROR > shm.c : shm_start() : SHM instance is NULL.\n");
+		printf("RUNTIME ERROR > shm.c : shm_write() : SHM instance is NULL.\n");
 		return;
 	}
-	if(shared->data == NULL){
-		printf("RUNTIME ERROR > shm.c : shm_start() : SHM data is NULL.\n");
+	if(data == NULL){
+		printf("RUNTIME ERROR > shm.c : shm_write() : Given data is NULL.\n");
 		return;
 	}
 
