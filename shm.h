@@ -26,6 +26,7 @@
 struct SHM{
 	unsigned int length;
 	char* data;
+	char* info;
 	size_t id;
 };
 typedef struct SHM shm;

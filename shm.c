@@ -54,8 +54,10 @@
     - Created shm.c/.h.
     - Added the demonstration programs.
 
-    14/01/2021 > [0.1.1] :
+    20/01/2021 > [0.1.1] :
     - Fixed a little thing in shm_write/read().
+    - Added shm info (which is shm id written on 8 characters in hexadecimal).
+    - Added a required FATAL ERROR in shm_open().
 
     BUGS : .
     NOTES : .
@@ -120,13 +122,25 @@ shm* shm_create(unsigned int length){
 		exit(EXIT_FAILURE);
 	}
 
-	//set struct values
+	//set id
 	shared->id = shmget(
 		IPC_PRIVATE,
 		length,
 		IPC_CREAT | IPC_EXCL | S_IRUSR | S_IWUSR
 	);
+
+	//set info
+	shared->info = malloc(9);
+	if(shared->info == NULL){
+		printf("FATAL ERROR > shm.c : shm_create() : Computer refuses to give more shared memory.\n");
+		exit(EXIT_FAILURE);
+	}
+	sprintf(shared->info, "%08x", (unsigned int)shared->id);
+
+	//set length
 	shared->length = length;
+
+	//set data
 	shared->data = shmat(shared->id, 0, 0);
 	if(shared->data == NULL){
 		printf("FATAL ERROR > shm.c : shm_create() : Computer refuses to give more shared memory.\n");
@@ -144,6 +158,7 @@ void shm_delete(shm* shared){
 
 	//free shm
 	shmctl(shared->id, IPC_RMID, 0);
+	free(shared->info);
 	shmdt(shared->data);
 	free(shared);
 }
@@ -164,10 +179,26 @@ shm* shm_open(size_t id, unsigned int length){
 		exit(EXIT_FAILURE);
 	}
 
-	//set struct values
+	//set id
 	shared->id = id;
+
+	//set info
+	shared->info = malloc(9);
+	if(shared->info == NULL){
+		printf("FATAL ERROR > shm.c : shm_open() : Computer refuses to give more shared memory.\n");
+		exit(EXIT_FAILURE);
+	}
+	sprintf(shared->info, "%08x", (unsigned int)shared->id);
+
+	//set length
 	shared->length = length;
+
+	//set data
 	shared->data = shmat(shared->id, 0, 0);
+	if(shared->data == NULL){
+		printf("FATAL ERROR > shm.c : shm_open() : Computer refuses to give more shared memory.\n");
+		exit(EXIT_FAILURE);
+	}
 
 	return shared;
 }
@@ -180,6 +211,7 @@ void shm_close(shm* shared){
 
 	//free structure (and not the shm segment)
 	shmdt(shared->data);
+	free(shared->info);
 	free(shared);
 }
 
