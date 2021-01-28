@@ -129,16 +129,16 @@ shm* shm_create(unsigned int length){
 		IPC_CREAT | IPC_EXCL | S_IRUSR | S_IWUSR
 	);
 
+	//set length
+	shared->length = length;
+
 	//set info
-	shared->info = malloc(9);
+	shared->info = malloc(17);
 	if(shared->info == NULL){
 		printf("FATAL ERROR > shm.c : shm_create() : Computer refuses to give more shared memory.\n");
 		exit(EXIT_FAILURE);
 	}
-	sprintf(shared->info, "%08x", shared->id);
-
-	//set length
-	shared->length = length;
+	sprintf(shared->info, "%08x%08x", shared->id, (int)(shared->length) );
 
 	//set data
 	shared->data = shmat(shared->id, 0, 0);
@@ -182,16 +182,16 @@ shm* shm_open(unsigned int id, unsigned int length){
 	//set id
 	shared->id = id;
 
+	//set length
+	shared->length = length;
+
 	//set info
-	shared->info = malloc(9);
+	shared->info = malloc(17);
 	if(shared->info == NULL){
 		printf("FATAL ERROR > shm.c : shm_open() : Computer refuses to give more shared memory.\n");
 		exit(EXIT_FAILURE);
 	}
-	sprintf(shared->info, "%08x", (unsigned int)shared->id);
-
-	//set length
-	shared->length = length;
+	sprintf(shared->info, "%08x%08x", shared->id, (int)(shared->length) );
 
 	//set data
 	shared->data = shmat(shared->id, 0, 0);
