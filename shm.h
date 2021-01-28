@@ -27,7 +27,7 @@ struct SHM{
 	unsigned int length;
 	char* data;
 	char* info;
-	size_t id;
+	unsigned int id;
 };
 typedef struct SHM shm;
 
@@ -57,7 +57,7 @@ shm* shm_create(unsigned int length);
 void shm_delete(shm* shared);
 
 //open - close
-shm* shm_open(size_t id, unsigned int length);
+shm* shm_open(unsigned int id, unsigned int length);
 void shm_close(shm* shared);
 
 //read - write

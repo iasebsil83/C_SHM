@@ -135,7 +135,7 @@ shm* shm_create(unsigned int length){
 		printf("FATAL ERROR > shm.c : shm_create() : Computer refuses to give more shared memory.\n");
 		exit(EXIT_FAILURE);
 	}
-	sprintf(shared->info, "%08x", (unsigned int)shared->id);
+	sprintf(shared->info, "%08x", shared->id);
 
 	//set length
 	shared->length = length;
@@ -166,7 +166,7 @@ void shm_delete(shm* shared){
 
 
 //open - close
-shm* shm_open(size_t id, unsigned int length){
+shm* shm_open(unsigned int id, unsigned int length){
 	if(length == 0){
 		printf("RUNTIME ERROR > shm.c : shm_open() : Cannot allocate 0 bytes.\n");
 		return NULL;
