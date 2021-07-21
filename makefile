@@ -7,14 +7,14 @@ run1: shm.o prog1.o prog2.o
 
 
 #example programs
-prog1.o: prog1.c shm.h
-	gcc -Wall -c prog1.c -O2
+prog1.o: src/prog1.c lib/shm.h
+	gcc -Wall -c src/prog1.c -O2
 
-prog2.o: prog2.c shm.h
-	gcc -Wall -c prog2.c -O2
+prog2.o: src/prog2.c lib/shm.h
+	gcc -Wall -c src/prog2.c -O2
 
 
 
 #shm library
-shm.o: shm.c shm.h
-	gcc -Wall -c shm.c -O2
+shm.o: lib/shm.c lib/shm.h
+	gcc -Wall -c lib/shm.c -O2

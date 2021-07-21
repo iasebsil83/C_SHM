@@ -7,15 +7,7 @@
 
 
 //shm utility
-#include "shm.h"
-
-
-
-
-
-
-
-
+#include "../lib/shm.h"
 
 
 
@@ -29,7 +21,7 @@
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prog [V.V.V] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            shm.h demonstration program
+                            shm.h demonstration program 2
 
         Blablabla about the subject.
 
@@ -46,16 +38,8 @@
     BUGS : Active bugs in last version.
     NOTES : Notes.
 
-    Contact     : 
+    Contact     : ...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-
-
-
-
-
-
 
 
 
@@ -74,9 +58,6 @@
 int main(){
 	//presentation
 	printf("Prog2 > Be sure to run Prog1 (./run1) before running this one.\n\n");
-
-
-
 
 
 
@@ -110,7 +91,7 @@ int main(){
 			case 'h':
 				printf("\nProg2 > Here is some help on available commands in this main loop.\n");
 				printf("Prog2 >  - 'h' : Shows this help section.\n");
-				printf("Prog2 >  - 'q' : Quit Prog1.\n");
+				printf("Prog2 >  - 'q' : Quit Prog2.\n");
 				printf("Prog2 >  - 'r' : Read content of SHM segment.\n");
 				printf("Prog2 >  - 'w' : Write in SHM segment.\n\n");
 			break;
@@ -157,9 +138,6 @@ int main(){
 	printf("Prog2 > Exited main loop.\n");
 	printf("Prog2 > Closing SHM segment.\n");
 	shm_close(s2);
-
-
-
 
 
 

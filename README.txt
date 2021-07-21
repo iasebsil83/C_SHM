@@ -1,9 +1,9 @@
 This program is a simple utility library that will allow you to manipulate shared memory (shm)
 on linux a little bit easier than sys/shm.h does.
 
-Demonstration programs are made in prog1.c & prog2.c (please launch Prog1 first).
+Demonstration programs are made in src/prog1.c & src/prog2.c (please launch Prog1 first).
 
-More information about this library are available in shm.c.
+More information about this library are available in lib/shm.c.
 
 
 

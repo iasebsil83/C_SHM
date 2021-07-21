@@ -7,15 +7,7 @@
 
 
 //shm utility
-#include "shm.h"
-
-
-
-
-
-
-
-
+#include "../lib/shm.h"
 
 
 
@@ -29,7 +21,7 @@
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prog [V.V.V] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            shm.h demonstration program
+                            shm.h demonstration program 1
 
         Blablabla about the subject.
 
@@ -46,16 +38,8 @@
     BUGS : Active bugs in last version.
     NOTES : Notes.
 
-    Contact     : 
+    Contact     : ...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-
-
-
-
-
-
 
 
 
@@ -74,9 +58,6 @@
 int main(){
 	//presentation
 	printf("Prog1 > This is a basic example of SHM manipulation using \"shm.c/.h\".\n\n");
-
-
-
 
 
 
@@ -155,9 +136,6 @@ int main(){
 	printf("Prog1 > Exited main loop.\n");
 	printf("Prog1 > Deleting SHM segment.\n");
 	shm_delete(s1);
-
-
-
 
 
 
