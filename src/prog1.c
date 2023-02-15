@@ -6,12 +6,9 @@
 
 
 
+
 //shm utility
 #include "../lib/shm.h"
-
-
-
-
 
 
 
@@ -48,14 +45,11 @@
 
 
 
-
-
-
-
 // ---------------- EXECUTION ----------------
 
 //main
 int main(){
+
 	//presentation
 	printf("Prog1 > This is a basic example of SHM manipulation using \"shm.c/.h\".\n\n");
 

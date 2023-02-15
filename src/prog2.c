@@ -6,12 +6,9 @@
 
 
 
+
 //shm utility
 #include "../lib/shm.h"
-
-
-
-
 
 
 
@@ -48,14 +45,11 @@
 
 
 
-
-
-
-
 // ---------------- EXECUTION ----------------
 
 //main
 int main(){
+
 	//presentation
 	printf("Prog2 > Be sure to run Prog1 (./run1) before running this one.\n\n");
 

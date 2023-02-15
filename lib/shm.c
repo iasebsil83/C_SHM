@@ -6,26 +6,16 @@
 
 
 
+
 //shared memory
 #include <sys/shm.h>
 #include <sys/stat.h>
 
 
 
+
 //own header
 #include "shm.h"
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -94,18 +84,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // -------------------------------- SHM --------------------------------
 
 //create - delete
@@ -165,6 +143,7 @@ void shm_delete(shm* shared){
 
 
 
+
 //open - close
 shm* shm_open(unsigned int id, unsigned int length){
 	if(length == 0){
@@ -214,6 +193,7 @@ void shm_close(shm* shared){
 	free(shared->info);
 	free(shared);
 }
+
 
 
 
