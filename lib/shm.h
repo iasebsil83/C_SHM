@@ -6,9 +6,7 @@
 
 
 
-
-
-// -------------------------------- DEFINITIONS --------------------------------
+// ---------------- DEFINITIONS ----------------
 
 //structures
 struct SHM{
@@ -24,14 +22,11 @@ typedef struct SHM shm;
 
 
 
-
-
-// -------------------------------- SHM --------------------------------
+// ---------------- SHM ----------------
 
 //create - delete
 shm* shm_create(unsigned int length);
 void shm_delete(shm* shared);
-
 
 
 
@@ -41,16 +36,8 @@ void shm_close(shm* shared);
 
 
 
-
 //read - write
 char* shm_read(shm* shared);             //returned data is NOT a copy but the SHM segment itself
 void shm_write(shm* shared, char* data); // data will not be free after use
                                          //WARNING ! data MUST HAVE length >= shared->length ('\0' IS NOT DETERMINATIVE)
-
-
-
-
-
-
-
 #endif

@@ -4,20 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
 //shared memory
 #include <sys/shm.h>
 #include <sys/stat.h>
 
-
-
-
 //own header
 #include "shm.h"
-
-
 
 
 
@@ -40,21 +32,7 @@
      - shm_read()
      - shm_write()
 
-    12/01/2021 > [0.1.0] :
-    - Created shm.c/.h.
-    - Added the demonstration programs.
-
-    20/01/2021 > [0.1.1] :
-    - Fixed a little thing in shm_write/read().
-    - Added shm info (which is shm id written on 8 characters in hexadecimal).
-    - Added a required FATAL ERROR in shm_open().
-
-    BUGS : .
-    NOTES : .
-
-    Contact     : i.a.sebsil83@gmail.com
-    Youtube     : https://www.youtube.com/user/IAsebsil83
-    GitHub repo : https://github.com/iasebsil83
+    Contact: https://github.com/iasebsil83
 
     Let's Code !                                  By I.A..
 ******************************************************************************************
@@ -79,8 +57,6 @@
 
     If not, see <https://www.gnu.org/licenses/>.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
 
 
 

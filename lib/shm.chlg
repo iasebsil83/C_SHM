@@ -1,0 +1,16 @@
+CURRENT STATE:
+    BUGS : .
+    NOTES : .
+
+
+
+20/01/2021 > [0.1.1] :
+- Fixed a little thing in shm_write/read().
+- Added shm info (which is shm id written on 8 characters in hexadecimal).
+- Added a required FATAL ERROR in shm_open().
+
+
+
+12/01/2021 > [0.1.0] :
+- Created shm.c/.h.
+- Added the demonstration programs.
