@@ -7,9 +7,7 @@ More information about this library are available in lib/shm.c.
 
 
 
-Contact     : i.a.sebsil83@gmail.com
-Youtube     : https://www.youtube.com/user/IAsebsil83
-GitHub repo : https://github.com/iasebsil83
+Contact: https://github.com/iasebsil83
 
 Let's Code !                                  By I.A.
 
